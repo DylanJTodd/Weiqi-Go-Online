@@ -3,3 +3,19 @@
     align-items: center;
     justify-content: center;
 }
+
+.counter {
+    position: absolute;
+    top: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: #f0f0f0;
+}
+
+#goldCounter {
+    left: 10px;
+}
+
+#whiteCounter {
+    right: 10px;
+}
