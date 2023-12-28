@@ -266,9 +266,6 @@ window.onload = function()
             let removedGroup = board.libertyCheck();
             if (removedGroup != null)
             {
-                let whiteCounter = 0;
-                let goldCounter = 0;
-
                 for (let removableGroup of removedGroup)
                 {
                     if (removableGroup.color != stone.color)
@@ -278,19 +275,16 @@ window.onload = function()
                             board.stones[removableStone.y][removableStone.x] = 0;
                             if (removableStone.color == 1)
                             {
-                                goldCounter+= 1;
+                                board.goldScore += 1
                             }
                             else
                             {
-                                whiteCounter += 1;
+                                board.whiteScore += 1;
                             }
                         }
                         removableGroup.deleteGroup(board);
                     }
                 }
-
-                board.whiteScore += whiteCounter;
-                board.goldScore += goldCounter;
 
                 document.getElementById('goldCounter').innerText = board.goldScore;
                 document.getElementById('whiteCounter').innerText = board.whiteScore;
